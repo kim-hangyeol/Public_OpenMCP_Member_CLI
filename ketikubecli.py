@@ -85,6 +85,8 @@ def policy(args):
 def installInitCluster(clusterName):
     install_dir = os.path.join(openmcpDir,"install_openmcp/member")
     initYamls = ["custom-metrics-apiserver", "metallb", "metric-collector", "metrics-server", "nginx-ingress-controller"]
+
+    os.system("kubectl create ns openmcp --context " + clusterName)
     for initYaml in initYamls:
         os.system("kubectl create -f " + install_dir + "/" + initYaml + " --context " + clusterName)
 
@@ -93,6 +95,8 @@ def installInitCluster(clusterName):
 def removeInitCluster(clusterName):
     install_dir = os.path.join(openmcpDir, "install_openmcp/member")
     initYamls = ["custom-metrics-apiserver", "metallb", "metric-collector", "metrics-server", "nginx-ingress-controller"]
+
+    os.system("kubectl delete ns openmcp --context " + clusterName)
     for initYaml in initYamls:
         os.system("kubectl delete -f " + install_dir + "/" + initYaml + " --context " + clusterName)
 
