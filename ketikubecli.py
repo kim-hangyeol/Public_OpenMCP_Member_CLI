@@ -88,7 +88,7 @@ def installInitCluster(clusterName):
     for initYaml in initYamls:
         os.system("kubectl create -f " + install_dir + "/" + initYaml + " --context " + clusterName)
 
-    os.system(install_dir + "/vertical-pod-autoscaler/hack/vpa-up.sh " + clusterName)
+    os.system("sh " + "install_dir + "/vertical-pod-autoscaler/hack/vpa-up.sh " + clusterName)
 
 def removeInitCluster(clusterName):
     install_dir = os.path.join(openmcpDir, "install_openmcp/member")
@@ -96,7 +96,7 @@ def removeInitCluster(clusterName):
     for initYaml in initYamls:
         os.system("kubectl delete -f " + install_dir + "/" + initYaml + " --context " + clusterName)
 
-    os.system(install_dir + "/vertical-pod-autoscaler/hack/vpa-down.sh " + clusterName)
+    os.system("sh " + install_dir + "/vertical-pod-autoscaler/hack/vpa-down.sh " + clusterName)
 
 
 def cluster_unjoin(args):

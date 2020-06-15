@@ -6,6 +6,7 @@
 
 ## Requirement
 OpenMCP Master Node에서 ketikubecli를 사용한다면, openmcp 설치가 완료되어야 함.
+
 OpenMCP 하위 Cluster Node들에서 ketikubecli를 사용한다면, 별도의 openmcp 설치가 필요하지 않음. 
 
 
