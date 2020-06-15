@@ -96,11 +96,12 @@ def removeInitCluster(clusterName):
     install_dir = os.path.join(openmcpDir, "install_openmcp/member")
     initYamls = ["custom-metrics-apiserver", "metallb", "metric-collector", "metrics-server", "nginx-ingress-controller"]
 
-    os.system("kubectl delete ns openmcp --context " + clusterName)
+
     for initYaml in initYamls:
         os.system("kubectl delete -f " + install_dir + "/" + initYaml + " --context " + clusterName)
 
     os.system("sh " + install_dir + "/vertical-pod-autoscaler/hack/vpa-down.sh " + clusterName)
+    os.system("kubectl delete ns openmcp --context " + clusterName)
 
 
 def cluster_unjoin(args):
