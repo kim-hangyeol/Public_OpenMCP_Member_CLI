@@ -1,4 +1,4 @@
-('/root/workspace/openmcp/ketikubecli/v3.0/build/ketikubecli/PYZ-00.pyz',
+('/root/workspace/openmcp/ketikubecli/build/ketikubecli/PYZ-00.pyz',
  [('encodings.aliases',
    '/usr/lib/python2.7/encodings/aliases.py',
    'PYMODULE'),
