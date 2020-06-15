@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['ketikubecli.py'],
-             pathex=['/root/workspace/openmcp/ketikubecli/v3.0'],
+             pathex=['/root/workspace/openmcp/ketikubecli'],
              binaries=[],
              datas=[],
              hiddenimports=[],
