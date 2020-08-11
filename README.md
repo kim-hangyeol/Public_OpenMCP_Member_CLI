@@ -2,34 +2,34 @@
 
 ## Introduction of KetiKubeCli
 
-> KETIì—ì„œ ê°œë°œí•œ OpenMCP í”Œëž«í¼ì˜ Cluster ìžë™ Join/Unjoin ê¸°ëŠ¥ì„ íš¨ê³¼ì ìœ¼ë¡œ ì œì–´í•  ìˆ˜ ìžˆëŠ” ëª…ë ¹ì–´ ì¸í„°íŽ˜ì´ìŠ¤
+> KETI¿¡¼­ °³¹ßÇÑ OpenMCP ÇÃ·§ÆûÀÇ Cluster ÀÚµ¿ Join/Unjoin ±â´ÉÀ» È¿°úÀûÀ¸·Î Á¦¾îÇÒ ¼ö ÀÖ´Â ¸í·É¾î ÀÎÅÍÆäÀÌ½º
 
 ## Requirement
-OpenMCP Master Nodeì—ì„œ ketikubeclië¥¼ ì‚¬ìš©í•œë‹¤ë©´, openmcp ì„¤ì¹˜ê°€ ì™„ë£Œë˜ì–´ì•¼ í•¨.
+OpenMCP Master Node¿¡¼­ ketikubecli¸¦ »ç¿ëÇÑ´Ù¸é, openmcp ¼³Ä¡°¡ ¿Ï·áµÇ¾î¾ß ÇÔ.
 
-OpenMCP í•˜ìœ„ Cluster Nodeë“¤ì—ì„œ ketikubeclië¥¼ ì‚¬ìš©í•œë‹¤ë©´, ë³„ë„ì˜ openmcp ì„¤ì¹˜ê°€ í•„ìš”í•˜ì§€ ì•ŠìŒ. 
+OpenMCP ÇÏÀ§ Cluster Nodeµé¿¡¼­ ketikubecli¸¦ »ç¿ëÇÑ´Ù¸é, º°µµÀÇ openmcp ¼³Ä¡°¡ ÇÊ¿äÇÏÁö ¾ÊÀ½. 
 
 
 ## How to Install
 ```
-# ì‹¤í–‰ í”„ë¡œê·¸ëž¨ ë§Œë“¤ê¸°
+# ½ÇÇà ÇÁ·Î±×·¥ ¸¸µé±â
 1.build.sh
 
-# ì‹¤í–‰ í”„ë¡œê·¸ëž¨ ê²½ë¡œ ì§€ì • ë° Config íŒŒì¼ ê²½ë¡œ ì§€ì •
+# ½ÇÇà ÇÁ·Î±×·¥ °æ·Î ÁöÁ¤ ¹× Config ÆÄÀÏ °æ·Î ÁöÁ¤
 2.install.sh
 ```
 
-## Config íŒŒì¼ ì„¤ì •
+## Config ÆÄÀÏ ¼³Á¤
 
-> KetiKubeCliëŠ” ë‹¤ìŒê³¼ ê°™ì€ ì„¤ì •ê°’(/var/lib/ketikubecli/config.yaml)ì´ í•„ìš”í•©ë‹ˆë‹¤.
+> KetiKubeCli´Â ´ÙÀ½°ú °°Àº ¼³Á¤°ª(/var/lib/ketikubecli/config.yaml)ÀÌ ÇÊ¿äÇÕ´Ï´Ù.
 ```
-# OpenMCP ì„¤ì¹˜ ê²½ë¡œ ì§€ì •(OpenMCP Masterì¸ ê²½ìš°ë§Œ)
+# OpenMCP ¼³Ä¡ °æ·Î ÁöÁ¤(OpenMCP MasterÀÎ °æ¿ì¸¸)
 openmcpDir: "/root/workspace/openmcp"
 
-# External(nfs) ì„œë²„ ì§€ì •
+# External(nfs) ¼­¹ö ÁöÁ¤
 nfsServer: "10.0.3.12"
 ```
 
 ## Governance
 
-ë³¸ í”„ë¡œì íŠ¸ëŠ” ì •ë³´í†µì‹ ê¸°ìˆ ì§„í¥ì„¼í„°(IITP)ì—ì„œ ì§€ì›í•˜ëŠ” '19ë…„ ì •ë³´í†µì‹ ë°©ì†¡ì—°êµ¬ê°œë°œì‚¬ì—…ìœ¼ë¡œ, "ì»´í“¨íŒ… ìžì›ì˜ ìœ ì—°í•œ í™•ìž¥ ë° ì„œë¹„ìŠ¤ ì´ë™ì„ ì œê³µí•˜ëŠ” ë¶„ì‚°Â·í˜‘ì—…í˜• ì»¨í…Œì´ë„ˆ í”Œëž«í¼ ê¸°ìˆ  ê°œë°œ ê³¼ì œ" ìž„.
+º» ÇÁ·ÎÁ§Æ®´Â Á¤º¸Åë½Å±â¼úÁøÈï¼¾ÅÍ(IITP)¿¡¼­ Áö¿øÇÏ´Â '19³â Á¤º¸Åë½Å¹æ¼Û¿¬±¸°³¹ß»ç¾÷À¸·Î, "ÄÄÇ»ÆÃ ÀÚ¿øÀÇ À¯¿¬ÇÑ È®Àå ¹× ¼­ºñ½º ÀÌµ¿À» Á¦°øÇÏ´Â ºÐ»ê¡¤Çù¾÷Çü ÄÁÅ×ÀÌ³Ê ÇÃ·§Æû ±â¼ú °³¹ß °úÁ¦" ÀÓ.
