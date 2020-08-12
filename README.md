@@ -1,35 +1,68 @@
-# ketikubecli
+# omctl
 
-## Introduction of KetiKubeCli
+## Introduction of omctl
 
-> KETI¿¡¼­ °³¹ßÇÑ OpenMCP ÇÃ·§ÆûÀÇ Cluster ÀÚµ¿ Join/Unjoin ±â´ÉÀ» È¿°úÀûÀ¸·Î Á¦¾îÇÒ ¼ö ÀÖ´Â ¸í·É¾î ÀÎÅÍÆäÀÌ½º
+> KETIì—ì„œ ê°œë°œí•œ OpenMCP í”Œë«í¼ì˜ Cluster Join/Unjoin ê¸°ëŠ¥ì„ ìœ„í•œ Member Clusterìš© ëª…ë ¹ì–´ ì¸í„°í˜ì´ìŠ¤
+>
 
 ## Requirement
-OpenMCP Master Node¿¡¼­ ketikubecli¸¦ »ç¿ëÇÑ´Ù¸é, openmcp ¼³Ä¡°¡ ¿Ï·áµÇ¾î¾ß ÇÔ.
-
-OpenMCP ÇÏÀ§ Cluster Nodeµé¿¡¼­ ketikubecli¸¦ »ç¿ëÇÑ´Ù¸é, º°µµÀÇ openmcp ¼³Ä¡°¡ ÇÊ¿äÇÏÁö ¾ÊÀ½. 
-
+í´ëŸ¬ìŠ¤í„° ì •ë³´ë¥¼ ì €ì¥í•  [External ì„œë²„](https://github.com/openmcp/external)
 
 ## How to Install
 ```
-# ½ÇÇà ÇÁ·Î±×·¥ ¸¸µé±â
-1.build.sh
-
-# ½ÇÇà ÇÁ·Î±×·¥ °æ·Î ÁöÁ¤ ¹× Config ÆÄÀÏ °æ·Î ÁöÁ¤
-2.install.sh
+# ì‹¤í–‰ í”„ë¡œê·¸ë¨ ë¹Œë“œ & ê²½ë¡œ ì§€ì • ë° Config íŒŒì¼ ê²½ë¡œ ì§€ì •
+./1.build.sh
 ```
 
-## Config ÆÄÀÏ ¼³Á¤
+## Config íŒŒì¼ ì„¤ì •
 
-> KetiKubeCli´Â ´ÙÀ½°ú °°Àº ¼³Á¤°ª(/var/lib/ketikubecli/config.yaml)ÀÌ ÇÊ¿äÇÕ´Ï´Ù.
+> omctlëŠ” ë‹¤ìŒê³¼ ê°™ì€ ì„¤ì •ê°’(/var/lib/omctl/config.yaml)ì´ í•„ìš”í•©ë‹ˆë‹¤.
 ```
-# OpenMCP ¼³Ä¡ °æ·Î ÁöÁ¤(OpenMCP MasterÀÎ °æ¿ì¸¸)
-openmcpDir: "/root/workspace/openmcp"
-
-# External(nfs) ¼­¹ö ÁöÁ¤
+# External(nfs) ì„œë²„ ì§€ì •
 nfsServer: "10.0.3.12"
 ```
 
+## How to Use
+[OpenMCP Master ì„¤ì¹˜](https://github.com/openmcp/openmcp) í›„ OpenMCP Master Clusterìš© [omcpctl](https://github.com/openmcp/openmcp/tree/master/omcpctl)ê³¼ OpneMCP Member Clusterìš© [omctl](https://github.com/openmcp/openmcp-cli)ì„ ì´ìš©í•œ Join ê³¼ì •
+
+
+```
+1. OpenMCP Master Clusterì—ì„œ Openmcp ë“±ë¡ 
+  Master) omcpctl register master
+
+2. OpenMCP Member Cluster ë“±ë¡
+  Member) omctl register member <OpenMCP_Master_IP>
+
+3. í˜„ì¬ OpenMCP Joinëœ í´ëŸ¬ìŠ¤í„° ì¡°íšŒ
+  Master) omcpctl join list
+
+   CLUSTERNAME | STATUS | REGION | ZONES |       APIENDPOINT        | AGE  
+ +-------------+--------+--------+-------+--------------------------+-----+
+   cluster1    | True   | AS     | CN,KR | https://CLUSTER1_IP:6443 |      
+   cluster2    | True   | AS     | CN,KR | https://CLUSTER2_IP:6443 |      
+
+
+4. í˜„ì¬ OpenMCP Unjoin(ì¡°ì¸ê°€ëŠ¥í•œ) í´ëŸ¬ìŠ¤í„° ì¡°íšŒ 
+  Master) omcpctl unjoin list
+
+  CLUSTERNAME |        APIENDPOINT        
++-------------+--------------------------+
+  cluster3    | https://CLUSTERIP3_IP:6443  
+
+5. Cluster Join ë° ê¸°ë³¸ ëª¨ë“ˆ ë°°í¬
+  Master) omcpctl join cluster <OpenMCP_Member_IP>
+
+6. í˜„ì¬ OpenMCP Joinëœ í´ëŸ¬ìŠ¤í„° ì¡°íšŒ
+  Master) omcpctl join list
+
+   CLUSTERNAME | STATUS | REGION | ZONES |       APIENDPOINT        | AGE  
+ +-------------+--------+--------+-------+--------------------------+-----+
+   cluster1    | True   | AS     | CN,KR | https://CLUSTER1_IP:6443 |      
+   cluster2    | True   | AS     | CN,KR | https://CLUSTER2_IP:6443 |      
+   cluster3    | True   | AS     | KR    | https://CLUSTER3_IP:6443 |      
+```
+
+
 ## Governance
 
-º» ÇÁ·ÎÁ§Æ®´Â Á¤º¸Åë½Å±â¼úÁøÈï¼¾ÅÍ(IITP)¿¡¼­ Áö¿øÇÏ´Â '19³â Á¤º¸Åë½Å¹æ¼Û¿¬±¸°³¹ß»ç¾÷À¸·Î, "ÄÄÇ»ÆÃ ÀÚ¿øÀÇ À¯¿¬ÇÑ È®Àå ¹× ¼­ºñ½º ÀÌµ¿À» Á¦°øÇÏ´Â ºĞ»ê¡¤Çù¾÷Çü ÄÁÅ×ÀÌ³Ê ÇÃ·§Æû ±â¼ú °³¹ß °úÁ¦" ÀÓ.
+ë³¸ í”„ë¡œì íŠ¸ëŠ” ì •ë³´í†µì‹ ê¸°ìˆ ì§„í¥ì„¼í„°(IITP)ì—ì„œ ì§€ì›í•˜ëŠ” '19ë…„ ì •ë³´í†µì‹ ë°©ì†¡ì—°êµ¬ê°œë°œì‚¬ì—…ìœ¼ë¡œ, "ì»´í“¨íŒ… ìì›ì˜ ìœ ì—°í•œ í™•ì¥ ë° ì„œë¹„ìŠ¤ ì´ë™ì„ ì œê³µí•˜ëŠ” ë¶„ì‚°Â·í˜‘ì—…í˜• ì»¨í…Œì´ë„ˆ í”Œë«í¼ ê¸°ìˆ  ê°œë°œ ê³¼ì œ" ì„.

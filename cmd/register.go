@@ -40,7 +40,7 @@ to quickly create a Cobra application.
 		if len(args) != 0 && args[0] == "openmcp" {
 			registerASOpenMCP()
 		} else if len(args) != 0 && args[0] == "member" {
-			if args[1] == "" {
+			if len(args) <= 1 && args[1] == "" {
 				fmt.Println("You Must Provide Cluster IP")
 			} else {
 				registerMemberToOpenMCP(args[1])
