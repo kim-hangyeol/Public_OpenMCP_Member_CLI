@@ -6,7 +6,7 @@
 >
 
 ## Requirement
-클러스터 정보를 저장할 [External 서버](https://github.com/openmcp/external)
+[1. 클러스터 정보를 저장할 External 서버](https://github.com/openmcp/external)
 
 ## How to Install
 ```
