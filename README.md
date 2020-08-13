@@ -9,18 +9,16 @@
 1. [클러스터 정보를 저장할 External 서버](https://github.com/openmcp/external)
 1. go 1.14.2 설치
 
+
 ## How to Install
+1.build.sh 에서 환경변수 설정 후 빌드
 ```
-# 실행 프로그램 빌드 & 경로 지정 및 Config 파일 경로 지정
-./1.build.sh
-```
+$ vim 1.build.sh
+...
+EXTERNAL_IP="10.0.3.12"    # External(nfs) 서버 지정
+...
 
-## Config 파일 설정
-
-> omctl는 다음과 같은 설정값(/var/lib/omctl/config.yaml)이 필요합니다.
-```
-# External(nfs) 서버 지정
-nfsServer: "10.0.3.12"
+$ ./1.build.sh
 ```
 
 ## How to Use
