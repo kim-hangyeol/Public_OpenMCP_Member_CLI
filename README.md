@@ -6,8 +6,8 @@
 >
 
 ## Requirement
-[1. 클러스터 정보를 저장할 External 서버](https://github.com/openmcp/external)
-2. go 설치
+1. [클러스터 정보를 저장할 External 서버](https://github.com/openmcp/external)
+1. go 1.14.2 설치
 
 ## How to Install
 ```
