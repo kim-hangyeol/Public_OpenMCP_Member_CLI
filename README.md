@@ -32,6 +32,7 @@ $ ./1.build.sh
 
 2. OpenMCP Member Cluster 등록
   Member) omctl register member <OpenMCP_Master_IP>
+ > mount 오류 시 nfs-common 설치 확인
 
 3. 현재 OpenMCP Join된 클러스터 조회
   Master) omcpctl join list
