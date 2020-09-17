@@ -30,32 +30,22 @@ $ ./1.build.sh
 1. OpenMCP Master Cluster에서 Openmcp 등록 (OpenMCP에서 수행)
 $ omcpctl register master
 
-2. OpenMCP Member Cluster 등록 (하위 클러스터에서 수행) 
+2. OpenMCP에 OpenMCP Member Cluster 등록 (하위 클러스터에서 수행) 
 $ omctl register member <OpenMCP_Master_IP>
 
 * mount 오류 시 nfs-common 설치 확인
 
-3. 현재 OpenMCP Join된 클러스터 조회 (OpenMCP에서 수행)
-$ omcpctl get cluster -A
-
-Cluster :  openmcp
-            NS           | CLUSTERNAME  | STATUS |   REGION    |         ZONES         |           APIENDPOINT               | PLATFORM |  AGE   
-+------------------------+--------------+--------+-------------+-----------------------+-------------------------------------+----------+-------+
-  kube-federation-system | cluster1     | True   | AS          | KR                    | https://10.0.3.50:6443              |          | 7d2h   
-  kube-federation-system | cluster2     | True   | AS          | KR                    | https://10.0.3.70:6443              |          | 35d       
-
-
-4. 현재 OpenMCP 조인가능한 클러스터 조회 (OpenMCP에서 수행)
+3. 현재 OpenMCP에 조인가능한 클러스터 조회 (OpenMCP에서 수행)
 $ omcpctl joinable list
 
   CLUSTERNAME |           APIENDPOINT           | PLATFORM  
 +-------------+---------------------------------+----------+
   cluster3    | https://CLUSTERIP3_IP:6443      |   
 
-5. Cluster Join 및 기본 모듈 배포 (OpenMCP에서 수행)
+4. OpenMCP에 Member Cluster Join 및 기본 모듈 배포 (OpenMCP에서 수행)
 $ omcpctl join cluster <OpenMCP_Member_IP>
 
-6. 현재 OpenMCP Join된 클러스터 조회 (OpenMCP에서 수행)
+5. 현재 OpenMCP에 Join된 클러스터 조회 (OpenMCP에서 수행)
 $ omcpctl get cluster -A
 
 Cluster :  openmcp
