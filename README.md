@@ -42,8 +42,7 @@ Cluster :  openmcp
             NS           | CLUSTERNAME  | STATUS |   REGION    |         ZONES         |           APIENDPOINT               | PLATFORM |  AGE   
 +------------------------+--------------+--------+-------------+-----------------------+-------------------------------------+----------+-------+
   kube-federation-system | cluster1     | True   | AS          | KR                    | https://10.0.3.50:6443              |          | 7d2h   
-  kube-federation-system | cluster2     | True   | AS          | KR                    | https://10.0.3.70:6443              |          | 35d    
-  kube-federation-system | cluster3     | True   | AS          | KR                    | https://10.0.3.80:6443              |          | 20d      
+  kube-federation-system | cluster2     | True   | AS          | KR                    | https://10.0.3.70:6443              |          | 35d       
 
 
 4. 현재 OpenMCP 조인가능한 클러스터 조회 (OpenMCP에서 수행)
@@ -64,7 +63,7 @@ Cluster :  openmcp
 +------------------------+--------------+--------+-------------+-----------------------+-------------------------------------+----------+-------+
   kube-federation-system | cluster1     | True   | AS          | KR                    | https://10.0.3.50:6443              |          | 7d2h   
   kube-federation-system | cluster2     | True   | AS          | KR                    | https://10.0.3.70:6443              |          | 35d    
-  kube-federation-system | cluster3     | True   | AS          | KR                    | https://10.0.3.80:6443              |          | 20d  
+  kube-federation-system | cluster3     | True   | AS          | KR                    | https://10.0.3.80:6443              |          | 20s 
 ```
 
 
