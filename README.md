@@ -6,10 +6,9 @@
 >
 
 ## Requirement
-1. [External Server to Store Cluster Information](https://github.com/openmcp/external)
-1. go 1.14.2 Installation
-1. nfs-common Installation (apt-get install nfs-common)
-
+1. [External Server](https://github.com/openmcp/external) to Store Cluster Information
+1. Install go 1.14.2
+1. Install nfs-common (apt-get install nfs-common)
 
 ## How to Install
 1.Build after setting environment variables at build.sh
