@@ -6,7 +6,7 @@
 >
 
 ## Requirement
-1. [클러스터 정보를 저장할 External 서버](https://github.com/openmcp/external)
+1. 클러스터 정보를 저장할 [External 서버](https://github.com/openmcp/external)
 1. go 1.14.2 설치
 1. nfs-common 설치 (apt-get install nfs-common)
 
